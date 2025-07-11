@@ -11,52 +11,59 @@ import "./bigChartBox.scss";
 const data = [
   {
     name: "Sun",
-    books: 4000,
-    clothes: 2400,
-    electronic: 2400,
+    critical: 4000,
+    high: 2400,
+    medium: 2400,
+    low: 1000,
   },
   {
     name: "Mon",
-    books: 3000,
-    clothes: 1398,
-    electronic: 2210,
+    critical: 2293,
+    high: 2698,
+    medium: 4673,
+    low: 4198,
   },
   {
     name: "Tue",
-    books: 2000,
-    clothes: 9800,
-    electronic: 2290,
+    critical: 1347,
+    high: 2891,
+    medium: 4765,
+    low: 3620,
   },
   {
     name: "Wed",
-    books: 2780,
-    clothes: 3908,
-    electronic: 2000,
+    critical: 4123,
+    high: 1756,
+    medium: 3890,
+    low: 2478,
   },
   {
     name: "Thu",
-    books: 1890,
-    clothes: 4800,
-    electronic: 2181,
+    critical: 1984,
+    high: 4532,
+    medium: 3207,
+    low: 2675,
   },
   {
     name: "Fri",
-    books: 2390,
-    clothes: 3800,
-    electronic: 2500,
+    critical: 1189,
+    high: 4012,
+    medium: 2397,
+    low: 3644,
   },
   {
     name: "Sat",
-    books: 3490,
-    clothes: 4300,
-    electronic: 2100,
+    critical: 1433,
+    high: 2056,
+    medium: 4870,
+    low: 2761,
   },
 ];
 
 const BigChartBox = () => {
   return (
     <div className="bigChartBox">
-      <h1>Revenue Analytics</h1>
+      <h1>Alert Analysis</h1>
       <div className="chart">
         <ResponsiveContainer width="99%" height="100%">
           <AreaChart
@@ -73,24 +80,32 @@ const BigChartBox = () => {
             <Tooltip />
             <Area
               type="monotone"
-              dataKey="electronic"
+              dataKey="low"
               stackId="1"
-              stroke="#8884d8"
-              fill="#8884d8"
+              stroke="#eee900"
+              fill="#eee900"
             />
             <Area
               type="monotone"
-              dataKey="clothes"
+              dataKey="medium"
               stackId="1"
-              stroke="#82ca9d"
-              fill="#82ca9d"
+              stroke="#ff9900"
+              fill="#ff9900"
             />
             <Area
               type="monotone"
-              dataKey="books"
+              dataKey="high"
               stackId="1"
-              stroke="#ffc658"
-              fill="#ffc658"
+              stroke="#FF0000"
+              fill="#FF0000"
+            />
+
+            <Area
+              type="monotone"
+              dataKey="critical"
+              stackId="1"
+              stroke="#8B0000"
+              fill="#8B0000"
             />
           </AreaChart>
         </ResponsiveContainer>
