@@ -6,6 +6,10 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Login from "./pages/login/Login";
+import Notes from "./pages/notes/Notes";
+import Settings from "./pages/settings/Settings";
+import Logs from "./pages/logs/Logs";
+import Rules from './pages/rules/Rules';
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
@@ -62,6 +66,22 @@ function App() {
           path: "/products/:id",
           element: <Product />,
         },
+        {
+          path: "/notes",
+          element: <Notes />,
+        },
+        {
+          path: "/settings",
+          element: <Settings />,
+        },
+        {
+          path: "/logs",
+          element: <Logs />,
+        },
+        {
+          path: "/rules",
+          element: <Rules />,
+        },
       ],
     },
     {
@@ -74,3 +94,4 @@ function App() {
 }
 
 export default App;
+
