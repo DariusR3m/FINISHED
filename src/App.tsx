@@ -10,6 +10,9 @@ import Notes from "./pages/notes/Notes";
 import Settings from "./pages/settings/Settings";
 import Logs from "./pages/logs/Logs";
 import Rules from './pages/rules/Rules';
+import Anomalies from './pages/anomalies/Anomalies';
+import Bot from './pages/bot/Bot';
+import Alerts from './pages/alerts/Alerts';
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
@@ -17,7 +20,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-
 
 const queryClient = new QueryClient();
 
@@ -81,6 +83,18 @@ function App() {
         {
           path: "/rules",
           element: <Rules />,
+        },
+        {
+          path: "/anomalies",
+          element: <Anomalies />,
+        },
+        {
+          path: "/bot",
+          element: <Bot />,
+        },
+        {
+          path: "/alerts",
+          element: <Alerts />,
         },
       ],
     },

@@ -29,14 +29,26 @@ export const menu = [
       },
       {
         id: 2,
+        title: "Alerts",
+        url: "/alerts",
+        icon: "note.svg",
+      },
+      {
+        id: 3,
         title: "Agents",
         url: "/products",
         icon: "product.svg",
       },
       {
-        id: 3,
+        id: 4,
         title: "Rules",
         url: "/rules",
+        icon: "log.svg",
+      },
+      {
+        id: 5,
+        title: "Anomalies",
+        url: "/anomalies",
         icon: "log.svg",
       },
     ],
@@ -47,8 +59,14 @@ export const menu = [
     listItems: [
       {
         id: 2,
-        title: "Personal Notes",
+        title: "Notes",
         url: "/notes",
+        icon: "note.svg",
+      },
+      {
+        id: 3,
+        title: "A.I Bot",
+        url: "/bot",
         icon: "note.svg",
       },
     ],

@@ -20,19 +20,11 @@
         display: flex;
         gap: 30px;
 
-        img {
-          width: 20px;
-          height: 20px;
+        .dot {
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
-          object-fit: cover;
-          margin-top: 10px;
-
-          @include xxl{
-            display: none;
-          }
-          @include lg{
-            display: block;
-          }
+          margin-top: 18px;
         }
 
         .userTexts {
@@ -44,18 +36,20 @@
             font-size: 18px;
             font-weight: 500;
           }
+
           .email {
             font-size: 14px;
 
-            @include xxl{
+            @include xxl {
               display: none;
             }
-            @include lg{
+            @include lg {
               display: block;
             }
           }
         }
       }
+
 
       .amount {
         font-weight: 500;
