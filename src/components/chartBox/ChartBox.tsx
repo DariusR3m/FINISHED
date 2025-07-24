@@ -2,17 +2,29 @@ import { Link } from "react-router-dom";
 import "./chartBox.scss";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 
+type ChartItem = {
+  name: string;
+  [key: string]: string | number;
+};
+
 type Props = {
   color: string;
   icon: string;
   title: string;
   dataKey: string;
-  number: number | string;
-  percentage: number;
-  chartData: object[];
+  chartData: ChartItem[];
 };
 
 const ChartBox = (props: Props) => {
+  // Calculate total
+  const total = props.chartData.reduce((acc, item) => {
+    return acc + (item[props.dataKey] as number);
+  }, 0);
+
+  const first = props.chartData[0][props.dataKey] as number;
+  const last = props.chartData[props.chartData.length - 1][props.dataKey] as number;
+  const percentage = first === 0 ? 0 : Math.round(((last - first) / first) * 100);
+
   return (
     <div className="chartBox">
       <div className="boxInfo">
@@ -20,7 +32,7 @@ const ChartBox = (props: Props) => {
           <img src={props.icon} alt="" />
           <span>{props.title}</span>
         </div>
-        <h1>{props.number}</h1>
+        <h1>{total}</h1>
         <Link to="/" style={{ color: props.color }}>
           View all
         </Link>
@@ -47,9 +59,9 @@ const ChartBox = (props: Props) => {
         <div className="texts">
           <span
             className="percentage"
-            style={{ color: props.percentage < 0 ? "tomato" : "limegreen" }}
+            style={{ color: percentage < 0 ? "tomato" : "limegreen" }}
           >
-            {props.percentage}%
+            {percentage}%
           </span>
           <span className="duration">this month</span>
         </div>

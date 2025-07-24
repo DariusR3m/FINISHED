@@ -1,0 +1,57 @@
+@import "../../styles/variables.scss";
+
+.wazuhHealthBox {
+  background-color: $main-bg;
+  border-radius: 12px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .statusBox {
+    display: flex;
+    align-items: center;
+    background-color: $dark-bg;
+    padding: 15px 20px;
+    border-radius: 20px;
+    border: 1.5px solid #ffffff;
+
+    .icon {
+      font-size: 24px;
+      margin-right: 15px;
+    }
+
+    .text {
+      .status {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .version {
+        font-size: 14px;
+        color: #ccc;
+      }
+    }
+
+    &.running {
+      .status {
+        color: #4caf50;
+      }
+    }
+
+    &.unreachable {
+      .status {
+        color: #f44336;
+      }
+    }
+  }
+}

@@ -1,13 +1,56 @@
-.barChartBox{
-    width: 100%;
+.barChartBox {
+  width: 100%;
+  height: 100%;
+
+  .barChartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .dropdown {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      select {
+        padding: 5px 8px;
+        background-color: #2a3447;
+        color: #fff;
+        border: 1px solid #444;
+        border-radius: 4px;
+      }
+
+      label {
+        color: #ccc;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .chart {
     height: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    h1{
-        font-size: 20px;
-        margin-bottom: 20px;
+    .noChartFallback {
+      width: 100%;
+      height: 150px; // same height as ResponsiveContainer
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .chart{
-        height: 100%;
+    .noData {
+      color: #ccc;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 50px;
     }
+  }
 }

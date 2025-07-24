@@ -89,8 +89,8 @@ export const menu = [
     listItems: [
       {
         id: 2,
-        title: "Logs",
-        url: "/logs",
+        title: "Report",
+        url: "/report",
         icon: "log.svg",
       },
     ],
@@ -153,142 +153,154 @@ export const chartBoxUser = {
   color: "#8884d8",
   icon: "/userIcon.svg",
   title: "Total Users",
-  number: "11.238",
   dataKey: "users",
-  percentage: 45,
   chartData: [
-    { name: "Sun", users: 400 },
-    { name: "Mon", users: 600 },
-    { name: "Tue", users: 500 },
-    { name: "Wed", users: 700 },
-    { name: "Thu", users: 400 },
-    { name: "Fri", users: 500 },
-    { name: "Sat", users: 450 },
+    { name: "Sun", users: 4 },
+    { name: "Mon", users: 6 },
+    { name: "Tue", users: 5 },
+    { name: "Wed", users: 7 },
+    { name: "Thu", users: 4 },
+    { name: "Fri", users: 5 },
+    { name: "Sat", users: 4 },
   ],
 };
 
 export const chartBoxProduct = {
   color: "skyblue",
   icon: "/productIcon.svg",
-  title: "Total Products",
-  number: "238",
-  dataKey: "products",
-  percentage: 21,
+  title: "Total Agents",
+  dataKey: "agents",
   chartData: [
-    { name: "Sun", products: 400 },
-    { name: "Mon", products: 600 },
-    { name: "Tue", products: 500 },
-    { name: "Wed", products: 700 },
-    { name: "Thu", products: 400 },
-    { name: "Fri", products: 500 },
-    { name: "Sat", products: 450 },
+    { name: "Sun", agents: 4 },
+    { name: "Mon", agents: 6 },
+    { name: "Tue", agents: 5 },
+    { name: "Wed", agents: 7 },
+    { name: "Thu", agents: 4 },
+    { name: "Fri", agents: 5 },
+    { name: "Sat", agents: 5 },
   ],
 };
 export const chartBoxRevenue = {
-  color: "teal",
+  color: "steelblue",
   icon: "/revenueIcon.svg",
-  title: "Total Revenue",
-  number: "$56.432",
-  dataKey: "revenue",
-  percentage: -12,
+  title: "Custom Rules",
+  dataKey: "rules",
   chartData: [
-    { name: "Sun", revenue: 400 },
-    { name: "Mon", revenue: 600 },
-    { name: "Tue", revenue: 500 },
-    { name: "Wed", revenue: 700 },
-    { name: "Thu", revenue: 400 },
-    { name: "Fri", revenue: 500 },
-    { name: "Sat", revenue: 450 },
+    { name: "Sun", rules: 6 },
+    { name: "Mon", rules: 8 },
+    { name: "Tue", rules: 3 },
+    { name: "Wed", rules: 2 },
+    { name: "Thu", rules: 6 },
+    { name: "Fri", rules: 7 },
+    { name: "Sat", rules: 3 },
   ],
 };
 export const chartBoxConversion = {
   color: "gold",
   icon: "/conversionIcon.svg",
-  title: "Total Ratio",
-  number: "2.6",
-  dataKey: "ratio",
-  percentage: 12,
+  title: "Total Alerts",
+  dataKey: "alerts",
   chartData: [
-    { name: "Sun", ratio: 400 },
-    { name: "Mon", ratio: 600 },
-    { name: "Tue", ratio: 500 },
-    { name: "Wed", ratio: 700 },
-    { name: "Thu", ratio: 400 },
-    { name: "Fri", ratio: 500 },
-    { name: "Sat", ratio: 450 },
+    { name: "Sun", alerts: 3 },
+    { name: "Mon", alerts: 7 },
+    { name: "Tue", alerts: 5 },
+    { name: "Wed", alerts: 9 },
+    { name: "Thu", alerts: 4 },
+    { name: "Fri", alerts: 6 },
+    { name: "Sat", alerts: 4 },
+  ]
+};
+
+export const alertAnalysisData = [
+  {
+    name: "Sun",
+    critical: 14,
+    high: 25,
+    medium: 35,
+    low: 38,
+  },
+  {
+    name: "Mon",
+    critical: 22,
+    high: 26,
+    medium: 46,
+    low: 41,
+  },
+  {
+    name: "Tue",
+    critical: 13,
+    high: 28,
+    medium: 47,
+    low: 36,
+  },
+  {
+    name: "Wed",
+    critical: 41,
+    high: 17,
+    medium: 38,
+    low: 24,
+  },
+  {
+    name: "Thu",
+    critical: 19,
+    high: 45,
+    medium: 32,
+    low: 26,
+  },
+  {
+    name: "Fri",
+    critical: 11,
+    high: 40,
+    medium: 23,
+    low: 36,
+  },
+  {
+    name: "Sat",
+    critical: 14,
+    high: 20,
+    medium: 48,
+    low: 27,
+  },
+];
+
+export const barChartBoxAnomaly = {
+  title: "Anomalies",
+  color: "#ff9800",
+  dataKey: "anomaly",
+  chartData: [
+    { name: "Sun", type: "Logon", anomaly: 5 },
+    { name: "Sun", type: "General", anomaly: 7 },
+    { name: "Sun", type: "Process", anomaly: 0 },
+
+    { name: "Mon", type: "Logon", anomaly: 4 },
+    { name: "Mon", type: "General", anomaly: 8 },
+    { name: "Mon", type: "Process", anomaly: 0 },
+
+    { name: "Tue", type: "Logon", anomaly: 6 },
+    { name: "Tue", type: "General", anomaly: 4 },
+    { name: "Tue", type: "Process", anomaly: 0 },
+
+    { name: "Wed", type: "Logon", anomaly: 7 },
+    { name: "Wed", type: "General", anomaly: 5 },
+    { name: "Wed", type: "Process", anomaly: 0 },
+
+    { name: "Thu", type: "Logon", anomaly: 3 },
+    { name: "Thu", type: "General", anomaly: 3 },
+    { name: "Thu", type: "Process", anomaly: 0 },
+
+    { name: "Fri", type: "Logon", anomaly: 6 },
+    { name: "Fri", type: "General", anomaly: 2 },
+    { name: "Fri", type: "Process", anomaly: 0 },
+
+    { name: "Sat", type: "Logon", anomaly: 4 },
+    { name: "Sat", type: "General", anomaly: 2 },
+    { name: "Sat", type: "Process", anomaly: 0 },
   ],
 };
 
-export const barChartBoxRevenue = {
-  title: "Profit Earned",
-  color: "#8884d8",
-  dataKey: "profit",
-  chartData: [
-    {
-      name: "Sun",
-      profit: 4000,
-    },
-    {
-      name: "Mon",
-      profit: 3000,
-    },
-    {
-      name: "Tue",
-      profit: 2000,
-    },
-    {
-      name: "Wed",
-      profit: 2780,
-    },
-    {
-      name: "Thu",
-      profit: 1890,
-    },
-    {
-      name: "Fri",
-      profit: 2390,
-    },
-    {
-      name: "Sat",
-      profit: 3490,
-    },
-  ],
-};
-
-export const barChartBoxVisit = {
-  title: "Total Visit",
-  color: "#FF8042",
-  dataKey: "visit",
-  chartData: [
-    {
-      name: "Sun",
-      visit: 4000,
-    },
-    {
-      name: "Mon",
-      visit: 3000,
-    },
-    {
-      name: "Tue",
-      visit: 2000,
-    },
-    {
-      name: "Wed",
-      visit: 2780,
-    },
-    {
-      name: "Thu",
-      visit: 1890,
-    },
-    {
-      name: "Fri",
-      visit: 2390,
-    },
-    {
-      name: "Sat",
-      visit: 3490,
-    },
-  ],
+export const wazuhStatus = {
+  isRunning: false, // set to false if unreachable
+  version: "4.8.2", // or "Unknown"
 };
 
 export const userRows = [

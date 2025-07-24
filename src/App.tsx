@@ -8,7 +8,7 @@ import Menu from "./components/menu/Menu";
 import Login from "./pages/login/Login";
 import Notes from "./pages/notes/Notes";
 import Settings from "./pages/settings/Settings";
-import Logs from "./pages/logs/Logs";
+import Report from "./pages/report/Report";
 import Rules from './pages/rules/Rules';
 import Anomalies from './pages/anomalies/Anomalies';
 import Bot from './pages/bot/Bot';
@@ -77,8 +77,8 @@ function App() {
           element: <Settings />,
         },
         {
-          path: "/logs",
-          element: <Logs />,
+          path: "/report",
+          element: <Report />,
         },
         {
           path: "/rules",
