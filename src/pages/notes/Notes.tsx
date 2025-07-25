@@ -1,36 +1,67 @@
 import { useState, useEffect } from "react";
 import "./notes.scss";
 
+type Note = {
+  text: string;
+  date: string;
+};
+
 const Notes = () => {
-  const [notes, setNotes] = useState<string[]>([]);
+  const [notes, setNotes] = useState<Note[]>([]);
   const [newNote, setNewNote] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Load notes from localStorage
+  // Load notes from localStorage on mount
   useEffect(() => {
-    const savedNotes = localStorage.getItem("userNotes");
-    if (savedNotes) {
-      setNotes(JSON.parse(savedNotes));
+  const savedNotes = localStorage.getItem("userNotes");
+  if (savedNotes) {
+    try {
+      const parsed = JSON.parse(savedNotes);
+      // Check if it's old format (string[])
+      if (Array.isArray(parsed) && typeof parsed[0] === "string") {
+        const upgraded = parsed.map((text: string) => ({
+          text,
+          date: new Date().toISOString(),
+        }));
+        setNotes(upgraded);
+      } else if (
+        Array.isArray(parsed) &&
+        parsed[0] &&
+        typeof parsed[0].text === "string"
+      ) {
+        setNotes(parsed);
+      }
+    } catch (e) {
+      console.error("Failed to parse saved notes:", e);
     }
-  }, []);
+  }
+}, []);
 
-  // Save notes to localStorage
+  // Save notes to localStorage whenever notes change
   useEffect(() => {
     localStorage.setItem("userNotes", JSON.stringify(notes));
   }, [notes]);
 
   const addNote = () => {
     if (newNote.trim()) {
-      setNotes([...notes, newNote]);
+      const newEntry: Note = {
+        text: newNote,
+        date: new Date().toISOString(),
+      };
+      setNotes([...notes, newEntry]);
       setNewNote("");
       setIsExpanded(false);
     }
   };
 
   const deleteNote = (index: number) => {
+  const confirmed = window.confirm("Are you sure you want to delete this note?");
+  if (confirmed) {
     const updatedNotes = notes.filter((_, i) => i !== index);
     setNotes(updatedNotes);
+    }
   };
+
 
   return (
     <div className="notes-page">
@@ -73,11 +104,11 @@ const Notes = () => {
           notes.map((note, index) => (
             <div key={index} className="note-card">
               <div className="note-content">
-                <p>{note}</p>
+                <p>{note.text}</p>
               </div>
               <div className="note-actions">
                 <span className="note-date">
-                  {new Date().toLocaleDateString()}
+                  {new Date(note.date).toLocaleDateString()}
                 </span>
                 <button
                   className="delete-btn"

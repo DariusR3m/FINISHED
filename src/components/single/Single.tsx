@@ -4,7 +4,7 @@ import "./single.scss"
 type Props = {
     id:number;
     img?:string;
-    title:string;
+    title:string
     info:object;
     chart:{
         dataKeys:{name:string; color: string}[];

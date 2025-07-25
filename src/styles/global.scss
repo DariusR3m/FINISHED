@@ -1,6 +1,22 @@
 @import "./variables.scss";
 @import "./responsive.scss";
 
+html, body {
+  height: 100%;
+  background-color: $main-bg; // Ensure it's dark like your .main
+  color: $main-color;
+}
+
+#root {
+  height: 100%;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   margin: 0;
   padding: 0;

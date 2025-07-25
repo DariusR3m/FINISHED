@@ -1,7 +1,7 @@
 import Home from "./pages/home/Home";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Users from "./pages/users/Users";
-import Products from "./pages/products/Products";
+import Agents from "./pages/agents/Agents";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
@@ -15,7 +15,8 @@ import Bot from './pages/bot/Bot';
 import Alerts from './pages/alerts/Alerts';
 import "./styles/global.scss";
 import User from "./pages/user/User";
-import Product from "./pages/product/Product";
+import Agent from "./pages/agent/Agent";
+import Alert from './pages/alert/Alert';
 import {
   QueryClient,
   QueryClientProvider,
@@ -57,16 +58,16 @@ function App() {
           element: <Users />,
         },
         {
-          path: "/products",
-          element: <Products />,
+          path: "/agents",
+          element: <Agents />,
         },
         {
           path: "/users/:id",
           element: <User />,
         },
         {
-          path: "/products/:id",
-          element: <Product />,
+          path: "/agents/:id",
+          element: <Agent />,
         },
         {
           path: "/notes",
@@ -95,6 +96,10 @@ function App() {
         {
           path: "/alerts",
           element: <Alerts />,
+        },
+        {
+          path: "/alerts/:id",
+          element: <Alert />,
         },
       ],
     },
